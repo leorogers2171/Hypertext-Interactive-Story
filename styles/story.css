@@ -1,0 +1,167 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    margin: 0;
+    height: 100vh;
+}
+
+
+#wraper {
+    height: calc(56.25vw);
+    background-image: url(../assets/intro/background-map-old-2.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+
+/*Content In Main Body*/
+
+#content {
+    width 100%;
+    height: 100%;
+}
+
+/*Header Section Containing Logo*/
+
+header {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+}
+
+/*Logo Properties*/
+
+header h1 {
+    align-self: flex-end;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3vw;
+    font-weight:500px;
+    letter-spacing: 5px;
+    line-height: 3.5vw;
+    background-image: url("../assets/intro/orange-background-example-1.jpg");
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-blend-mode: saturation;
+}
+
+/*Logo Image*/
+
+#logo {
+    height: calc(100% - 40px);
+    margin-top: 40px;
+}
+
+/*Main Page Content*/
+
+main {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    background-image: url(../assets/story/thatched-house-story.png);
+    background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+}
+
+/*Story Page Content*/
+
+#inner-content {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 50.6%;
+    width: 53.03%;
+    background-image: url(../assets/story/inner-background-story.png);
+    background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/*Left Section*/
+
+#inner-content-left {
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 100%;
+    width: 50%;
+}
+
+#inner-content-left img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/*Right Section*/
+
+#inner-content-right {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#text-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+}
+
+#buttons-container {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    align-items: stretch;
+    flex-grow: 0;
+}
+
+#button-wrapper-1, #button-wrapper-2 {
+    margin-bottom: 0%;
+    
+}
+
+.button-wrapper {
+    margin-bottom: 2%;
+    margin-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: center;
+    height: 4.5vh;
+    width: 50%;
+}
+
+.button-wrapper button{
+    width: 100%;
+    height: 100%;
+}
+
+.button-wrapper button p{
+    color: white;
+    font-size: 1.3vw;
+}
+
+.button-wrapper button a:link {
+    text-decoration: none;
+}
+
+
+
+
+
