@@ -20,7 +20,7 @@ var storyContent = new Array;
 	opt1: "Follow the path",
     opt1LinkID: "follow-the-path",
 	opt2: "Don't follow the path",
-    opt2LinkID: "",
+    opt2LinkID: "don't-follow-the-path",
 };
 
     storyContent[1] = { 
@@ -93,3 +93,5 @@ var storyContent = new Array;
 	opt1: "Continue",
     opt1LinkID: ""
 };
+
+console.table(storyContent);
