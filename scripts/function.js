@@ -1,6 +1,8 @@
 var storyID = 0;
 var storyText = "";
 var backgroundAudio = new Audio();
+var audioStarted = false;
+var currentStoryIndex = 0;
 
 const buttonContainer = document.querySelector("#buttons-container");
 
@@ -8,7 +10,6 @@ document.getElementById("text-content").innerHTML = "";
 
 function initialiseStory()
 {
-    playSound("assets/story/frog-septe.mp3", 0.5, true)
     //Get content from array
     // Add text content
     storyText = storyContent[0].textContent;
@@ -31,6 +32,9 @@ function buttonActivated(button)
     var indexOfNextStoryItem = 0;
     var matchedID = false;
     var buttonURL = button.formAction;
+    var buttonID = button.id;
+    var buttonIndex = (buttonID.substring(buttonID.lastIndexOf("-") + 1) - 1);
+    console.log(buttonIndex);
     var storyContentLength = storyContent.length;
     var buttonDestination = buttonURL.substring(buttonURL.lastIndexOf("/") + 1);
     
@@ -46,7 +50,9 @@ function buttonActivated(button)
         }
     }
     
-    if(matchedID == true){
+    if(matchedID){
+
+        playSoundEffect(buttonIndex);
         stopSounds();
         addNewContent(indexOfNextStoryItem);
     }
@@ -55,11 +61,35 @@ function buttonActivated(button)
     }
 }
 
+function playSoundEffect(buttonIndex)
+{
+    var soundID = storyContent[currentStoryIndex].buttonAudioName[buttonIndex];
+    var soundEffectIndex = 0;
+    
+    for(i = 0; i < soundEffects.length; i++)
+    {
+        if(soundEffects[i].soundID == soundID)
+        {
+            console.log("Match");
+            soundEffectIndex = i;
+            break;
+        }
+    }
+    var soundEffectSelected = new Audio();
+    soundEffectSelected.src = soundEffects[soundEffectIndex].filePath;
+    soundEffectSelected.load();
+    soundEffectSelected.play();
+}
+
+
 function addNewContent(index) {
     
     var buttonWrappers = new Array();
     var buttons = new Array();
     var buttonsText = new Array();
+    
+    //Set new story index
+    currentStoryIndex = index;
     
     //Clear Container and Buttons
     var el = document.getElementById('buttons-container');
@@ -74,33 +104,27 @@ function addNewContent(index) {
     
     //Change Story Image
     
-    console.log(storyContent[index].imgPaths.length);
-    
     document.getElementById("story-side-image").src = storyContent[i].imgPaths[0];
     document.getElementById("story-side-image").alt = storyContent[i].imgAlts[0];
     
     //Create New Container and Button
     //For each option create button and container
-    
-    for(i = 0; i < (storyContent[index].options.length); i++){
+    for(i = 0; i < (storyContent[index].options.length); i++)
+    {
         var buttonWrapper = document.createElement("div")
         buttonWrapper.id = ("button-wrapper-" + [i + 1]);
-        console.log("Button Wrapper ID = " + buttonWrapper.id)
         buttonWrapper.className = "button-wrapper";
         
         var button = document.createElement("button");
         button.id = ("button-" + [i + 1]);
-        console.log("Button ID = " + button.id)
         button.formAction = storyContent[index].optionsLinkID[i];
-        console.log("Form Action = " + button.formAction)
-        
+
         var buttonText = document.createElement("p");
         buttonText.textContent = storyContent[index].options[i];
-        console.log("Button Text = " + buttonText.textContent);
-        
+
         document.getElementById("buttons-container").appendChild(buttonWrapper);
         document.getElementById("button-wrapper-" + [i + 1]).appendChild(button);
-        document.getElementById("button-" + [i + 1]).appendChild(buttonText);
+        document.getElementById("button-" + [i + 1]).appendChild(buttonText);    
     }
 }
 
@@ -108,6 +132,7 @@ function playSound(src, volume, loop) {
     backgroundAudio.src = src;
     backgroundAudio.loop = loop;
     backgroundAudio.volume = volume;
+    backgroundAudio.load();
     backgroundAudio.play();
 }
 
@@ -118,7 +143,6 @@ function stopSounds() {
 
 
 function checkForButton(element) {
-    
     if(element.parentNode.tagName == "BUTTON")
     {
         buttonActivated(element.parentNode);
@@ -129,4 +153,6 @@ buttonContainer.addEventListener("click",function() {
   checkForButton(event.target);
 });
 
-initialiseStory();
+window.onload=function(){
+    initialiseStory();
+}

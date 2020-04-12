@@ -12,6 +12,9 @@
 
 //backgroundAudioPath: "../assets/story/"
 
+//buttonAudioPaths: [""],
+//buttonAudioEvent: "onclick"
+
 
 var storyContent = new Array;
 
@@ -24,7 +27,10 @@ var storyContent = new Array;
     optionsLinkID: ["follow-the-path", "don't-follow-the-path"],
     backgroundAudioPath: "assets/story/DubbleA%20Garage%20Foley%20Demo%202.wav",
     audioVolume: 0.35,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
 };
 
     storyContent[1] = { 
@@ -36,7 +42,9 @@ var storyContent = new Array;
     optionsLinkID: ["keep-following"],
     backgroundAudioPath: "assets/story/DubbleA%20Garage%20Foley%20Demo%202.wav",
     audioVolume: 0.35,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
 };
 
     storyContent[2] = { 
@@ -48,7 +56,9 @@ var storyContent = new Array;
     optionsLinkID: ["kick-that-pompous-creature-away-from-the-doorstep", "refrain-from-kicking-the-frog"],
     backgroundAudioPath: "assets/story/frog-septe.mp3",
     audioVolume: 0.45,
-    audioLoop: false
+    audioLoop: false,
+    buttonAudioName: ["audio_frog", "audio_frog"],
+    buttonAudioEvent: ["onclick", "onclick"]
 };
 
     storyContent[3] = { 
@@ -60,7 +70,9 @@ var storyContent = new Array;
     optionsLinkID: ["proceed-inside"],
     backgroundAudioPath: "assets/story/frog-septe.mp3",
     audioVolume: 0.45,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_door_opening", "audio_door_opening"],
+    buttonAudioEvent: ["onclick", "onclick"]
 };
 
     storyContent[4] = { 
@@ -80,7 +92,7 @@ var storyContent = new Array;
     textContent: "You enter the first room and see that everything is gigantic here. You can smell something delicious - there's hot steam coming from the giant table – it’s porridge! But you can’t reach it. <br> You were not nice to the Frog! You're on your own!",
     imgPaths: ["assets/story/Goldilocks-Table-Porridge-1.jpg"],
 	imgAlts: ["Goldilocks with three bowls of porrige and frog in the kitchen"],
-	options: ["Go back to the woods", "try-to-reach-the-top-of-the-table-on-your-own"],
+	options: ["Go back to the woods", "Try to reach the top of the table on your own"],
     optionsLinkID: [""],
     backgroundAudioPath: "assets/story/444473__casualman__boiling-porridge.wav",
     audioVolume: 1,
