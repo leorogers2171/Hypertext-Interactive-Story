@@ -9,7 +9,7 @@ const buttonContainer = document.querySelector("#buttons-container");
 document.getElementById("text-content").innerHTML = "";
 
 function initialiseStory()
-{
+{   
     //Get content from array
     // Add text content
     storyText = storyContent[0].textContent;
@@ -104,8 +104,8 @@ function addNewContent(index) {
     
     //Change Story Image
     
-    document.getElementById("story-side-image").src = storyContent[i].imgPaths[0];
-    document.getElementById("story-side-image").alt = storyContent[i].imgAlts[0];
+    document.getElementById("story-side-image").src = storyContent[index].imgPaths[0];
+    document.getElementById("story-side-image").alt = storyContent[index].imgAlts[0];
     
     //Create New Container and Button
     //For each option create button and container

@@ -9,7 +9,6 @@ body {
 
 
 #wraper {
-    height: calc(56.25vw);
     background-image: url(../assets/intro/background-map-old-2.jpg);
     background-repeat: no-repeat;
 	background-size: cover;
@@ -76,7 +75,7 @@ main {
     position: absolute;
     bottom: 0;
     height: 40.9%;
-    width: 45.7%;
+    width: 37.5%;
 }
 
 #inner-content-left {

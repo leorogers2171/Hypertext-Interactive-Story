@@ -77,10 +77,11 @@ main {
     position: absolute;
     bottom: 0;
     height: 50.6%;
-    width: 53.03%;
+    width: 43.4%;
     background-image: url(../assets/story/inner-background-story.png);
     background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
+    background-color: aqua;
 }
 
 /*Left Section*/
@@ -134,7 +135,6 @@ main {
 
 #button-wrapper-1, #button-wrapper-2 {
     margin-bottom: 0%;
-    
 }
 
 .button-wrapper {
@@ -160,8 +160,3 @@ main {
 .button-wrapper button a:link {
     text-decoration: none;
 }
-
-
-
-
-

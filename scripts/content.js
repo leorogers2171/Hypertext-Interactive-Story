@@ -1,19 +1,20 @@
 // Content for the Story
+//Boiler Plate
 
-
-//    storyContent[0] = { 
-//    contentID: = "",
+//	storyContent[0] = { 
+//    contentID: "",
 //    textContent: "",
-//    imgPath: "../assets/story/",
-//	imgAlt: "",
-//	opt1: "",
-//	opt2: ""	
-//    };
-
-//backgroundAudioPath: "../assets/story/"
-
-//buttonAudioPaths: [""],
-//buttonAudioEvent: "onclick"
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
 
 
 var storyContent = new Array;
@@ -84,7 +85,9 @@ var storyContent = new Array;
     optionsLinkID: [""],
     backgroundAudioPath: "assets/story/361529__inspectorj__calm-synthesizer-b-2.wav",
     audioVolume: 0.8,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_frog"],
+    buttonAudioEvent: ["onclick"]
     };
 
     storyContent[5] = { 
@@ -93,10 +96,12 @@ var storyContent = new Array;
     imgPaths: ["assets/story/Goldilocks-Table-Porridge-1.jpg"],
 	imgAlts: ["Goldilocks with three bowls of porrige and frog in the kitchen"],
 	options: ["Go back to the woods", "Try to reach the top of the table on your own"],
-    optionsLinkID: [""],
+    optionsLinkID: ["try-to-reach-the-top-of-the-table-on-your-own","its-even"],
     backgroundAudioPath: "assets/story/444473__casualman__boiling-porridge.wav",
     audioVolume: 1,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_frog"],
+    buttonAudioEvent: ["onclick"]
 };
 
     storyContent[6] = { 
@@ -108,7 +113,9 @@ var storyContent = new Array;
     optionsLinkID: ["its-odd",],
     backgroundAudioPath: "assets/story/444473__casualman__boiling-porridge.wav",
     audioVolume: 0.8,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
 };
 
     storyContent[7] = { 
@@ -117,9 +124,223 @@ var storyContent = new Array;
     imgPaths: ["assets/story/Goldilocks-Table-Porridge-Firewood-4.jpg", "assets/story/Goldilocks-Table-Porridge-Firewood-5.jpg/"],
 	imgAlts: [""],
 	options: ["Continue"],
+    optionsLinkID: ["continue-to-bears"],
     backgroundAudioPath: "assets/story/352531__vintprox__challenging-countdown-20s.wav",
     audioVolume: 5,
-    audioLoop: true
+    audioLoop: true,
+    buttonAudioName: ["audio_bear"],
+    buttonAudioEvent: ["onclick"]
 };
+
+	storyContent[8] = { 
+    contentID: "continue-to-bears",
+    textContent: "What do you say to the bears ?",
+    imgPaths: ["assets/story/Goldilocks-Table-Porridge-Firewood-5.jpg"],
+	imgAlts: ["Goldilocks on floor in kitchen with bears"],
+	options: ["Curse at the bears", "Apologise to the bears for trespassing"],
+    optionsLinkID: ["curse-at-the-bears", "apologise-to-the-bears-for-trespassing"],
+    backgroundAudioPath: "assets/story/352531__vintprox__challenging-countdown-20s.wav",
+    audioVolume: 0.5,
+    audioLoop: true,
+    buttonAudioName: ["audio_growl"],
+    buttonAudioEvent: ["onclick"]
+};
+
+	storyContent[9] = { 
+    contentID: "curse-at-the-bears",
+    textContent: "You curse at the bears, then the biggest one, Papa Bear, who gets inexplicably mad when hears profanity, eats you up. <br> THE END",
+    imgPaths: ["assets/story/382547d94755d9f601fc7bcc6e6af672.jpg"],
+	imgAlts: ["Bears eating Goldilocks in kitchen"],
+	options: ["Return to start"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "assets/story/49138__smidoid__dinosaur-eating.wav",
+    audioVolume: 0.5,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[10] = { 
+    contentID: "apologise-to-the-bears-for-trespassing",
+    textContent: "You're scared and you apologise to the bears for trespassing, so they let you stay at their place until you're well.",
+    imgPaths: ["assets/story/92-922602_goldilocks-and-the-three-bears-cartoon.png"],
+	imgAlts: ["Goldilocks eating poridge with the three bears"],
+	options: ["Return home"],
+    optionsLinkID: ["return-to-shattered-home"],
+    backgroundAudioPath: "assets/story/DubbleA%20Garage%20Foley%20Demo%202.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[11] = { 
+    contentID: "its-even",
+    textContent: "You get to taste the sweet porridge alright! But wait, there are three bowls on the table!",
+    imgPaths: ["assets/story/Goldilocks-Table-Porridge-Firewood-3.jpg"],
+	imgAlts: ["Goldilocks on table with three bowls of poridge"],
+	options: ["Bowl 1", "Bowl 2", "Bowl 3"],
+    optionsLinkID: ["bowl-1","bowl-2","bowl-3"],
+    backgroundAudioPath: "assets/story/331032__anshgang__a10b-2.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_ow","audio_cold","audio_victory1"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[12] = { 
+    contentID: "bowl-1",
+    textContent: "You pick the first one, the biggest one – the porridge is too hot!",
+    imgPaths: ["assets/story/goldilocks-clipart-46.jpg"],
+	imgAlts: ["Goldilocks eating porridge which is too hot"],
+	options: ["Try again"],
+    optionsLinkID: ["its-even"],
+    backgroundAudioPath: "assets/story/331032__anshgang__a10b-2.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[13] = { 
+    contentID: "bowl-2",
+    textContent: "You choose the second one, however, is too cold.",
+    imgPaths: ["assets/story/goldilocks.jpg"],
+	imgAlts: ["Goldilocks eating poridge"],
+	options: ["Try again"],
+    optionsLinkID: ["its-even"],
+    backgroundAudioPath: "assets/story/331032__anshgang__a10b-2.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[14] = { 
+    contentID: "bowl-3",
+    textContent: "The third one - now that's porridge! You eat it all!",
+    imgPaths: ["assets/story/goldilocks_insurance_package-1080x675.jpg"],
+	imgAlts: ["Goldilocks eating poridge which is just right"],
+	options: ["Continue"],
+    optionsLinkID: ["continue-third-bowl"],
+    backgroundAudioPath: "assets/story/331032__anshgang__a10b-2.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[15] = { 
+    contentID: "continue-third-bowl",
+    textContent: "You spot three chairs standing near the table. ‘Oh, why haven’t I just climbed the chairs in the first place,’ you cry out, ‘instead of all that jumble!’ <br>How are you going to get down?",
+    imgPaths: ["assets/story/Goldilocks-Table-Porridge-Chairs-2.jpg"],
+	imgAlts: ["Goldilocks stuck at the top of the kitchen table"],
+	options: ["Pounce on the biggest of the chairs","Sit there for a moment","Climb down using your own braid as a rope."],
+    optionsLinkID: ["pounce-on-the-biggest-of-the-chairs", "sit-there-for-a-moment", "climb-down-using-your-own-braid-as-a-rope"],
+    backgroundAudioPath: "assets/story/Mission%20Impossible%20-%20Theme%20%28Ti%C3%ABsto%20Remix%29.mp3",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_ow","audio_background","audio_frog"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[16] = { 
+    contentID: "pounce-on-the-biggest-of-the-chairs",
+    textContent: "This chair seems to be too hard!",
+    imgPaths: ["assets/story/goldilocks-chair-scene-7.jpg"],
+	imgAlts: ["Goldilocks on a chair"],
+	options: ["Try your luck on this chair","Jump on the middle chair","Jump on the smallest chair"],
+    optionsLinkID: ["try-your-luck-on-this-chair","jump-on-the-middle-chair","Jump-on-the-smallest-chair"],
+    backgroundAudioPath: "assets/story/Mission%20Impossible%20-%20Theme%20%28Ti%C3%ABsto%20Remix%29.mp3",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2","audio_background2","audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+//	storyContent[0] = { 
+//    contentID: "",
+//    textContent: "",
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
+//
+//	storyContent[0] = { 
+//    contentID: "",
+//    textContent: "",
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
+//
+//	storyContent[0] = { 
+//    contentID: "",
+//    textContent: "",
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
+//
+//	storyContent[0] = { 
+//    contentID: "",
+//    textContent: "",
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
+//
+//	storyContent[0] = { 
+//    contentID: "",
+//    textContent: "",
+//    imgPaths: ["assets/story/"],
+//	imgAlts: [""],
+//	options: [""],
+//    optionsLinkID: [""],
+//    backgroundAudioPath: "assets/story/",
+//    audioVolume: 1,
+//    audioLoop: true,
+//    buttonAudioName: [""],
+//    buttonAudioEvent: ["onclick"]
+//    
+//};
+
+
 
 console.table(storyContent);
