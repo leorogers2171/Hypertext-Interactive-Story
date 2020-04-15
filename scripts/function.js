@@ -1,3 +1,5 @@
+/* jshint browser: true */
+/* jshint node: true */
 var storyID = 0;
 var storyText = "";
 var backgroundAudio = new Audio();
@@ -41,7 +43,7 @@ function buttonActivated(button)
     //Find button destination ID
     //Load new content - story text plus buttons
     
-    for(i = 0; i < storyContentLength; i++){
+    for(var i = 0; i < storyContentLength; i++){
         if(storyContent[i].contentID == buttonDestination)
         {
             indexOfNextStoryItem = i;
@@ -66,7 +68,7 @@ function playSoundEffect(buttonIndex)
     var soundID = storyContent[currentStoryIndex].buttonAudioName[buttonIndex];
     var soundEffectIndex = 0;
     
-    for(i = 0; i < soundEffects.length; i++)
+    for(var i = 0; i < soundEffects.length; i++)
     {
         if(soundEffects[i].soundID == soundID)
         {
@@ -84,9 +86,9 @@ function playSoundEffect(buttonIndex)
 
 function addNewContent(index) {
     
-    var buttonWrappers = new Array();
-    var buttons = new Array();
-    var buttonsText = new Array();
+    var buttonWrappers = [];
+    var buttons = [];
+    var buttonsText = [];
     
     //Set new story index
     currentStoryIndex = index;
@@ -96,7 +98,7 @@ function addNewContent(index) {
     while ( el.firstChild ) el.removeChild( el.firstChild );
     
     //Start New Background Audio
-    playSound(storyContent[index].backgroundAudioPath, storyContent[index].audioVolume, storyContent[index].audioLoop)
+    playSound(storyContent[index].backgroundAudioPath, storyContent[index].audioVolume, storyContent[index].audioLoop);
     
     //Set Story Text
     
@@ -109,9 +111,9 @@ function addNewContent(index) {
     
     //Create New Container and Button
     //For each option create button and container
-    for(i = 0; i < (storyContent[index].options.length); i++)
+    for(var i = 0; i < (storyContent[index].options.length); i++)
     {
-        var buttonWrapper = document.createElement("div")
+        var buttonWrapper = document.createElement("div");
         buttonWrapper.id = ("button-wrapper-" + [i + 1]);
         buttonWrapper.className = "button-wrapper";
         
@@ -155,4 +157,4 @@ buttonContainer.addEventListener("click",function() {
 
 window.onload=function(){
     initialiseStory();
-}
+};
