@@ -1,21 +1,4 @@
 // Content for the Story
-//Boiler Plate
-
-//	storyContent[0] = { 
-//    contentID: "",
-//    textContent: "",
-//    imgPaths: ["assets/story/"],
-//	imgAlts: [""],
-//	options: [""],
-//    optionsLinkID: [""],
-//    backgroundAudioPath: "assets/story/",
-//    audioVolume: 1,
-//    audioLoop: true,
-//    buttonAudioName: [""],
-//    buttonAudioEvent: ["onclick"]
-//    
-//};
-
 
 var storyContent = new Array;
 
@@ -82,7 +65,7 @@ var storyContent = new Array;
     imgPaths: ["assets/story/Goldilocks-Frog-Porch-1.jpg"],
 	imgAlts: ["Goldilocks sat on doorstep with frog guarding"],
 	options: ["Proceed inside"],
-    optionsLinkID: [""],
+    optionsLinkID: ["proceed-inside"],
     backgroundAudioPath: "assets/story/361529__inspectorj__calm-synthesizer-b-2.wav",
     audioVolume: 0.8,
     audioLoop: true,
@@ -92,7 +75,7 @@ var storyContent = new Array;
 
     storyContent[5] = { 
     contentID: "proceed-inside",
-    textContent: "You enter the first room and see that everything is gigantic here. You can smell something delicious - there's hot steam coming from the giant table – it’s porridge! But you can’t reach it. <br> You were not nice to the Frog! You're on your own!",
+    textContent: "You enter the first room and see that everything is gigantic here. You can smell something delicious - there's hot steam coming from the giant table – it’s porridge! But you can’t reach it. You were not nice to the Frog! You're on your own!",
     imgPaths: ["assets/story/Goldilocks-Table-Porridge-1.jpg"],
 	imgAlts: ["Goldilocks with three bowls of porrige and frog in the kitchen"],
 	options: ["Go back to the woods", "Try to reach the top of the table on your own"],
@@ -110,11 +93,11 @@ var storyContent = new Array;
     imgPaths: ["assets/story/Goldilocks-Table-Porridge-Firewood-1.jpg"],
 	imgAlts: ["Goldilocks with table, porridge and firewood"],
 	options: ["It's Odd", "It's Even"],
-    optionsLinkID: ["its-odd",],
+    optionsLinkID: ["its-odd", "its-even"],
     backgroundAudioPath: "assets/story/444473__casualman__boiling-porridge.wav",
     audioVolume: 0.8,
     audioLoop: true,
-    buttonAudioName: ["audio_background2"],
+    buttonAudioName: ["audio_background2", "audio_background2"],
     buttonAudioEvent: ["onclick"]
 };
 
@@ -126,7 +109,7 @@ var storyContent = new Array;
 	options: ["Continue"],
     optionsLinkID: ["continue-to-bears"],
     backgroundAudioPath: "assets/story/352531__vintprox__challenging-countdown-20s.wav",
-    audioVolume: 5,
+    audioVolume: 0.5,
     audioLoop: true,
     buttonAudioName: ["audio_bear"],
     buttonAudioEvent: ["onclick"]
@@ -269,7 +252,7 @@ var storyContent = new Array;
 	storyContent[17] = { 
     contentID: "try-your-luck-on-this-chair",
     textContent: "This one could be the right one - you can rest and continue the cabin exploration later.",
-    imgPaths: ["assets/story/http://leorog.com/goldilocks/goldilocks-chair-scene-7.jpg"],
+    imgPaths: ["assets/story/goldilocks-chair-scene-7.jpg"],
 	imgAlts: ["Goldilocks on top of chair"],
 	options: ["Try a different chair"],
     optionsLinkID: ["pounce-on-the-biggest-of-the-chairs"],
@@ -347,7 +330,7 @@ var storyContent = new Array;
     imgPaths: ["assets/story/goldilocks-scene-honey-stairs-1.jpg", "assets/story/Goldilocks-beds-e1551908799589.jpg"],
 	imgAlts: ["Goldilocks sees a jar of honey on the stairs", "Three beds small, medium, large in the bedroom"],
 	options: ["Take a nap", "Hop on beds"],
-    optionsLinkID: ["take-nap", "hop-on-beads"],
+    optionsLinkID: ["take-nap", "hop-on-beds"],
     backgroundAudioPath: "assets/story/187204__zagi2__balkan-intro-outro-2.wav",
     audioVolume: 0.35,
     audioLoop: true,
@@ -431,6 +414,310 @@ var storyContent = new Array;
     
 };
 
+	storyContent[28] = { 
+    contentID: "yes",
+    textContent: "There will be some stinging!",
+    imgPaths: ["assets/story/Bees-scene-stole-honey-2.jpg"],
+	imgAlts: ["Goldilocks getting stung by bees in the bedroom"],
+	options: ["Choose the Point Of View"],
+    optionsLinkID: ["pov1"],
+    backgroundAudioPath: "assets/story/384108__spookycustard__killer-bee-attack-2.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
 
+	storyContent[29] = { 
+    contentID: "no",
+    textContent: "If they don’t blame you for the theft, they will buzz around to warn you about the bears’ return.",
+    imgPaths: ["assets/story/Bees-scene-stole-honey-3.jpg"],
+	imgAlts: ["Bees buuzzing aroung Goldicloks"],
+	options: ["Choose the Point Of View"],
+    optionsLinkID: ["pov1"],
+    backgroundAudioPath: "assets/story/481647__joncon-library__bee-buzzing.wav",
+    audioVolume: 0.2,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[30] = { 
+    contentID: "pov1",
+    textContent: "Choose your Point Of View",
+    imgPaths: ["assets/story/POV%20Choice.png"],
+	imgAlts: ["Two doors one with Goldilocks behind and the other bears"],
+	options: ["Goldilocks Point Of View", "Bears Point Of View"],
+    optionsLinkID: ["goldilocks-pov", "bears-pov"],
+    backgroundAudioPath: "assets/story/DubbleA%20Garage%20Foley%20Demo%202.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background", "audio_background"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[31] = { 
+    contentID: "bears-pov",
+    textContent: "You enter the cabin only to find that someone was in your house. You notice that somebody has also been eating your porridge, but only the smallest portion has been eaten. What's your bare necessity decision?",
+    imgPaths: ["assets/story/Bears%20Return%20Home.jpg"],
+	imgAlts: ["Bears in kitchen"],
+	options: ["Look for the intruder", "Run away to get some help"],
+    optionsLinkID: ["look-for-the-intruder", "run-away-to-get-some-help"],
+    backgroundAudioPath: "assets/story/Pirates%20of%20the%20Caribbean%20Theme%20-%20Fingerstyle%20Guitar%20Cover.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_bear", "audio_bear"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[32] = { 
+    contentID: "look-for-the-intruder",
+    textContent: "You look for the intruder, and tiptoe upstairs, into the bedroom.",
+    imgPaths: ["assets/story/Bears%20Return%20Home%20Stairs.jpg"],
+	imgAlts: ["Bear stood on staircase"],
+	options: ["Continue"],
+    optionsLinkID: ["continue-upstairs-intruder"],
+    backgroundAudioPath: "assets/story/Pirates%20of%20the%20Caribbean%20Theme%20-%20Fingerstyle%20Guitar%20Cover.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_growl"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[33] = { 
+    contentID: "run-away-to-get-some-help",
+    textContent: "You run away to get some help. You then return with many wild forest creaturs - Goldilocks can't beat this gang, and gets eaten. THE END",
+    imgPaths: ["assets/story/forest-animals-safari-tropical-cartoon-happy-birthday-photo-background-photography-backdrops-quality-vinyl.jpg"],
+	imgAlts: ["Wild forest with creatures in"],
+	options: ["Go back to the start"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "assets/story/361529__inspectorj__calm-synthesizer-b-2.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[34] = { 
+    contentID: "continue-upstairs-intruder",
+    textContent: "You hear the bears call out ‘Somebody has been sleeping in my bed'! 'Somebody has been sleeping in my bed too'! 'Somebody is still sleeping in my bed!’",
+    imgPaths: ["assets/story/Bears%20Back%20In%20Bedroom.jpg"],
+	imgAlts: ["Bears in bedroom with three beds in"],
+	options: ["Change your POV"],
+    optionsLinkID: ["change-your-pov"],
+    backgroundAudioPath: "assets/story/Jaws%20-%20Theme%20song.wav",
+    audioVolume: 0.5,
+    audioLoop: true,
+    buttonAudioName: ["audio_growl"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[35] = { 
+    contentID: "goldilocks-pov",
+    textContent: "You previously had a fear of bees. No bees to help you, you're on your own now.",
+    imgPaths: ["assets/story/8437046b4a7e52a30ca3da23d72b77d1.jpg"],
+	imgAlts: ["Swarm of bees"],
+	options: ["Continue"],
+    optionsLinkID: ["bees-continue-no-fear"],
+    backgroundAudioPath: "assets/story/481647__joncon-library__bee-buzzing.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[36] = { 
+    contentID: "bees-continue-no-fear",
+    textContent: "You're ok with the bees, you then ask the bees for help. The bees make a dense swarm, pick you up, and take you out of the window and into the forest.",
+    imgPaths: ["assets/story/Bees%20Carying%20Goldilocks%20Out%20Window.jpg"],
+	imgAlts: ["Goldilocks flying out of windows with swarm of bees"],
+	options: ["Explore the forest"],
+    optionsLinkID: ["keep-following"],
+    backgroundAudioPath: "assets/story/Pirates%20of%20the%20Caribbean%20Theme%20-%20Fingerstyle%20Guitar%20Cover.wav",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[37] = { 
+    contentID: "bees-continue-fear",
+    textContent: "Did you pick some poisonous mushrooms at the beginning? Turns out you didn't! You catch the bees with your basket, and close the lid. Then you wait.",
+    imgPaths: ["assets/story/woman-picking-mushrooms-autumn-forest_1456-697.jpg"],
+	imgAlts: ["Mushrooms"],
+	options: ["Find out what happens"],
+    optionsLinkID: ["continue-upstairs-intruder"],
+    backgroundAudioPath: "assets/story/481647__joncon-library__bee-buzzing.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[38] = { 
+    contentID: "change-your-pov",
+    textContent: "Are you a bee-keeper or a mushroom-soup chef?",
+    imgPaths: ["assets/story/POV-Choice-2.png"],
+	imgAlts: ["Mushroom soup chef or bee keeper"],
+	options: ["Mushroom-soup chef", "Bee-keeper"],
+    optionsLinkID: ["mushroom-soup-chef", "bee-keeper"],
+    backgroundAudioPath: "assets/story/DubbleA%20Garage%20Foley%20Demo%202.wav",
+    audioVolume: 0.35,
+    audioLoop: true,
+    buttonAudioName: ["audio_chef", "audio_bee_buzz"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+
+	storyContent[39] = { 
+    contentID: "bee-keeper",
+    textContent: "The bees are out! The bees instantly recognise the real honey thieves, so they attack them, run them out of the cabin, into the woods, and then into the stream where the bears drown.",
+    imgPaths: ["assets/story/bears-beekeeper-bees-1.jpg"],
+	imgAlts: ["Bee keeper, bears and bees at mountain lake"],
+	options: ["Continue"],
+    optionsLinkID: ["cabin-all-alone"],
+    backgroundAudioPath: "assets/story/INSIDEINFO%20-%20HONEY%20BEE%20%28AUDIO%20REMIX%29-2.wav",
+    audioVolume: 0.8,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[40] = { 
+    contentID: "cabin-all-alone",
+    textContent: "You're now all alone in the cabin. You contemplate your future life. Will you stay in the bear cabin?",
+    imgPaths: ["assets/story/bee-keeper-scene-Artboard%203.jpg"],
+	imgAlts: ["Bee keeper in cabin alone"],
+	options: ["Yes", "No"],
+    optionsLinkID: ["stay-in-cabin", "return-to-shattered-home"],
+    backgroundAudioPath: "assets/story/INSIDEINFO%20-%20HONEY%20BEE%20%28AUDIO%20REMIX%29-2.wav",
+    audioVolume: 0.8,
+    audioLoop: true,
+    buttonAudioName: ["audio_chef", "audio_chef"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[41] = { 
+    contentID: "stay-in-cabin",
+    textContent: "You stay in the cabin, take care of the household, get married and have a family, and tell your children a story of Goldilocks, a courageous girl that had beaten the bears. YOU HAVE SUCCESSFULLY REACHED THE END VERDICT",
+    imgPaths: [""],
+	imgAlts: [""],
+	options: ["Start again"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "assets/story/447538__drakensson__cinematic-industrial-outro-3.wav",
+    audioVolume: 0.7,
+    audioLoop: true,
+    buttonAudioName: [""],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[42] = { 
+    contentID: "return-to-shattered-home",
+    textContent: "You return to your shattered home and look for your father. The two of you repair your house, and you take care of him when he gets old. The story of the brave girl called Goldilocks falls into oblivion. YOU HAVE SUCCESSFULLY REACHED THE END VERDICT",
+    imgPaths: [""],
+	imgAlts: [""],
+	options: ["Start again"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "assets/story/447538__drakensson__cinematic-industrial-outro-3.wav",
+    audioVolume: 0.7,
+    audioLoop: true,
+    buttonAudioName: [""],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[43] = { 
+    contentID: "mushroom-soup-chef",
+    textContent: "'Have a little sip of my soup, messieurs, ' a delicate dish as a token of truce. Would the bears rather eat soup or a girl? Think wisely...",
+    imgPaths: ["assets/story/muscroom-chef-scene-1.jpg"],
+	imgAlts: ["Goldilocks the bears and a mushroom soup chef in the kitchen"],
+	options: ["Eat soup", "Eat a girl"],
+    optionsLinkID: ["bee-keeper", "eat-a-girl"],
+    backgroundAudioPath: "assets/story/muscroom-chef-scene-1.jpg",
+    audioVolume: 0.6,
+    audioLoop: true,
+    buttonAudioName: ["audio_chef", "audio_berries"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[44] = { 
+    contentID: "eat-a-girl",
+    textContent: "You have reached the end your journey. Your moral compas was not faced in the correct direction.",
+    imgPaths: ["assets/story/113050-OO6LHP-457.png"],
+	imgAlts: ["Old fashioned compas"],
+	options: ["Go back to the start"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "assets/story/52531__vintprox__challenging-countdown-20s.wav",
+    audioVolume: 0.5,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[45] = { 
+    contentID: "don't-follow-the-path",
+    textContent: "You continue to pick berries and mushrooms.",
+    imgPaths: ["assets/story/Berries-and-Mushrooms-1.png"],
+	imgAlts: ["Berries and mushrooms"],
+	options: ["Pick colourful, but poison ones", "Pick shabby looking, but delicious ones."],
+    optionsLinkID: ["pick-enough-berries", "wait-for-your-father-the-hunter-to-return"],
+    backgroundAudioPath: "assets/story/447538__drakensson__cinematic-industrial-outro-3.wav",
+    audioVolume: 0.8,
+    audioLoop: true,
+    buttonAudioName: ["audio_chef", "audio_chef"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[46] = { 
+    contentID: "pick-enough-berries",
+    textContent: "You see your home crushed into pieces, no sign of your mother. You're brought to tears, What do you do?",
+    imgPaths: ["assets/story/Home-Crushed-Berries.png"],
+	imgAlts: ["Home crushed to peices"],
+	options: ["Escape", "Wait for your father, the hunter, to return."],
+    optionsLinkID: ["keep-following", "wait-for-your-father-the-hunter-to-return"],
+    backgroundAudioPath: "assets/story/447538__drakensson__cinematic-industrial-outro-3.wav",
+    audioVolume: 0.8,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2", "audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[47] = { 
+    contentID: "wait-for-your-father-the-hunter-to-return",
+    textContent: "Your father eventually shows up, sees bear traces, so he goes to the forest and hunts the bears down. THE END",
+    imgPaths: [""],
+	imgAlts: [""],
+	options: ["Go back to the start"],
+    optionsLinkID: ["step-1"],
+    backgroundAudioPath: "",
+    audioVolume: 1,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
+	storyContent[48] = { 
+    contentID: "sit-there-for-a-moment",
+    textContent: "You know what happened to your house and mum.",
+    imgPaths: [""],
+	imgAlts: [""],
+	options: ["Escape the forest"],
+    optionsLinkID: ["keep-following"],
+    backgroundAudioPath: "assets/story/352531__vintprox__challenging-countdown-20s.wav",
+    audioVolume: 0.5,
+    audioLoop: true,
+    buttonAudioName: ["audio_background2"],
+    buttonAudioEvent: ["onclick"]
+    
+};
 
 console.table(storyContent);

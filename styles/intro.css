@@ -61,7 +61,7 @@ header h1 {
 
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     height: 80%;
     background-image: url(../assets/intro/thatched-house.png);
     background-repeat: no-repeat;
@@ -69,9 +69,16 @@ main {
 	background-position: bottom;
 }
 
-#inner-content {
+#inner-content-wrapper {
+    order: 2;
+    width: 40%;
     display: flex;
-/*    background-color: red;*/
+    justify-content: center;
+}
+
+#inner-content {
+    order: 2;
+    display: flex;
     position: absolute;
     bottom: 0;
     height: 40.9%;
@@ -100,4 +107,36 @@ main {
 #inner-content-left img {
     width: 100%;
     height: 100%;
+}
+
+/*Instructions*/
+
+#instructions-left-wrapper{
+    order: 1;
+}
+
+#instructions-right-wrapper {
+    order: 3;
+}
+
+.instructions-wrapper {
+    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.instructions {
+    width: 70%;
+    height: 40%;
+}
+
+.instructions p {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-size: 1.8vw;
+    color: black;
 }
