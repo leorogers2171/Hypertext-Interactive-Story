@@ -1,15 +1,22 @@
 /* jshint browser: true */
 /* jshint node: true */
+
+//Current story array ID
 var storyID = 0;
+//Text content for story
 var storyText = "";
+//Declarding audio element
 var backgroundAudio = new Audio();
+//Bool if audio element has been activated
 var audioStarted = false;
+//Current story index - 1
 var currentStoryIndex = 0;
 
 const buttonContainer = document.querySelector("#buttons-container");
-
 document.getElementById("text-content").innerHTML = "";
 
+
+//Add initial story content
 function initialiseStory()
 {   
     //Get content from array
@@ -19,20 +26,18 @@ function initialiseStory()
     
     //Add button content
     document.getElementById("button-1").getElementsByTagName("p")[0].textContent = storyContent[0].options[0];
-    
     document.getElementById("button-2").getElementsByTagName("p")[0].textContent = storyContent[0].options[1];
     
     //Set link to follow
     document.getElementById("button-1").formAction = storyContent[0].optionsLinkID[0];
-    
     document.getElementById("button-2").formAction = storyContent[0].optionsLinkID[1];
 }
 
-//Left Button Is Pressed
+//Button activated
 function buttonActivated(button)
 {
-    var indexOfNextStoryItem = 0;
-    var matchedID = false;
+    var indexOfNextStoryItem = 0; //Array index of next item to display
+    var matchedID = false; //Matched destination ID with array content ID
     var buttonURL = button.formAction;
     var buttonID = button.id;
     var buttonIndex = (buttonID.substring(buttonID.lastIndexOf("-") + 1) - 1);
@@ -52,22 +57,27 @@ function buttonActivated(button)
         }
     }
     
+    //If button contentID matches destinationID
     if(matchedID){
-
-        playSoundEffect(buttonIndex);
-        stopSounds();
-        addNewContent(indexOfNextStoryItem);
+        playSoundEffect(buttonIndex); //Play sound effect
+        stopSounds(); //Stop audio elements from playing
+        addNewContent(indexOfNextStoryItem); //Add new story content
     }
     else{
+        //Couldn't match next story item to ID
+        //Output message stating that the item can't be found
         window.alert("Error: Next story item not found");
     }
 }
 
+//Play sound effect
 function playSoundEffect(buttonIndex)
 {
     var soundID = storyContent[currentStoryIndex].buttonAudioName[buttonIndex];
     var soundEffectIndex = 0;
     
+    //Iterates through sound effects ID
+    //Matches sound ID
     for(var i = 0; i < soundEffects.length; i++)
     {
         if(soundEffects[i].soundID == soundID)
@@ -77,13 +87,13 @@ function playSoundEffect(buttonIndex)
             break;
         }
     }
-    var soundEffectSelected = new Audio();
-    soundEffectSelected.src = soundEffects[soundEffectIndex].filePath;
-    soundEffectSelected.load();
-    soundEffectSelected.play();
+    var soundEffectSelected = new Audio(); //Add new audio component
+    soundEffectSelected.src = soundEffects[soundEffectIndex].filePath; //Starts sound using the index
+    soundEffectSelected.load(); //Load audio
+    soundEffectSelected.play(); //Play audio
 }
 
-
+//Add new story content
 function addNewContent(index) {
     
     var buttonWrappers = [];
@@ -130,31 +140,39 @@ function addNewContent(index) {
     }
 }
 
+
+//Play background sound
+//Using existing audio element
 function playSound(src, volume, loop) {
-    backgroundAudio.src = src;
-    backgroundAudio.loop = loop;
-    backgroundAudio.volume = volume;
+    backgroundAudio.src = src; //Audio URL
+    backgroundAudio.loop = loop; //Continous audio playing
+    backgroundAudio.volume = volume; //Audio volume
     backgroundAudio.load();
     backgroundAudio.play();
 }
 
+//Stop background audio
 function stopSounds() {
-    backgroundAudio.pause();
-    backgroundAudio.currentTime = 0;
+    backgroundAudio.pause(); //Pause audio
+    backgroundAudio.currentTime = 0; //Set playback time to 0
 }
 
-
+//Check for button activated ID
 function checkForButton(element) {
     if(element.parentNode.tagName == "BUTTON")
     {
-        buttonActivated(element.parentNode);
+        buttonActivated(element.parentNode);//Send in parent DIV ID
     }
 }
 
+//Listen for user click in button container
+//Check if button is pressed
 buttonContainer.addEventListener("click",function() {
   checkForButton(event.target);
 });
 
+//On load of the window
+//Initialise the story
 window.onload=function(){
     initialiseStory();
 };
